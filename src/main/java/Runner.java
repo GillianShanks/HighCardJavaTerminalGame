@@ -10,7 +10,7 @@ public class Runner {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Welcome to High Card (two player edition)!");
+        System.out.println("Welcome to High Card!");
 
 
         System.out.println("How many players do you have (please choose between 2 and 52)?");
@@ -54,6 +54,7 @@ public class Runner {
             game.deal();
 
             for (int i = 0; i < numOfPlayers; i++) {
+                System.out.println();
                 System.out.println(players.get(i).getName() + " has:");
                 System.out.println(players.get(i).getPlayerHand().getRank() + " of " + players.get(i).getPlayerHand().getSuit());
             }
@@ -61,10 +62,12 @@ public class Runner {
             game.checkForWinner();
 
             if(game.isDraw()){
+                System.out.println();
                 System.out.println("That was a draw! Let's deal again!");
                 System.out.println();
             } else {
-                System.out.println("The winner is: " + game.getWinner().getName());
+                System.out.println();
+                System.out.println("!!!! THE WINNER IS: " + game.getWinner().getName().toUpperCase() + " !!!!");
             }
         }
 
